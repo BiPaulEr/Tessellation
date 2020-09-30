@@ -1,0 +1,16 @@
+#version 450
+layout (vertices = 4) out ;
+uniform int resolution;
+void main(){
+
+  gl_TessLevelOuter[0]=resolution;
+  gl_TessLevelOuter[1]=resolution;
+  gl_TessLevelOuter[2]=resolution;
+  gl_TessLevelOuter[3]=resolution;
+
+  gl_TessLevelInner[0]=resolution;
+  gl_TessLevelInner[1]=resolution;
+
+  gl_out[gl_InvocationID].gl_Position = gl_in[gl_InvocationID].gl_Position;
+
+}
